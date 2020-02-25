@@ -19,12 +19,16 @@ sudo snap install go --classic
 sudo snap install kubectl --classic
 sudo snap install helm --classic
 sudo snap install minikube --classic
-sudo snap install terraform --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
 
 # Utilities
-sudo apt install net-tools ansible powertop tlp vagrant bat vim -y
+sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget -y
+
+# Terraform
+wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
+sudo unzip ./terraform_0.12.21_linux_amd64.zip -d /usr/local/bin/
+rm terraform_0.12.21_linux_amd64.zip
 
 # GCloud
 sudo apt-get install apt-transport-https ca-certificates gnupg
@@ -38,11 +42,12 @@ chsh -s $(which zsh)
 
 # fnm (Node JS)
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
-fnm install 12.5.0
+fnm install 11.12.0
 fnm use
 fnm install
 fnm use
-fnm use 12.5.0
+fnm use 11.12.0
+fnm default 11.12.0
 
 
 # Starship (terminal)

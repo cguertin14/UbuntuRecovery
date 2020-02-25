@@ -72,7 +72,7 @@ plugins=(
     git 
     helm 
     docker 
-    kubectl 
+    kubectl
     zsh-completions 
     zsh-autosuggestions
 )
@@ -130,7 +130,6 @@ emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
 
-
 unset ZLE_RPROMPT_INDENT
 #export ANDROID_HOME=$HOME/Android/Sdk
 #export PATH=$PATH:$ANDROID_HOME/emulator
@@ -140,7 +139,7 @@ unset ZLE_RPROMPT_INDENT
 export PATH="$PWD/node_modules/.bin/:$PATH"
 
 # Command highlight && Completion.
-autoload -Uz compinit
+autoload -Uz compinit # && compinit
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
