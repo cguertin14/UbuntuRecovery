@@ -112,11 +112,14 @@ function goto {
      perso)
 	 cd ~/Documents/Perso
 	 ;;
+     cedille)
+	 cd ~/Documents/ETS/Cedille
+	 ;;
      infrac)
 	 cd ~/Documents/ETS/Cedille/cloud-sre
 	 ;;
      *)
-    echo "Utilisation: $0 {work|infra|infrac|ets|perso}"
+    echo "Utilisation: $0 {work|infra|infrac|ets|cedille|perso}"
     ;;
    esac
 }
