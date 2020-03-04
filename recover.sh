@@ -49,6 +49,9 @@ fnm use
 fnm use 11.12.0
 fnm default 11.12.0
 
+# JSON and YAML cli tools (jq & yq)
+sudo curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -o /usr/bin/jq
+sudo curl -L "https://github.com/mikefarah/yq/releases/download/3.2.1/yq_linux_amd64" -o /usr/bin/yq
 
 # Starship (terminal)
 curl -fsSL https://starship.rs/install.sh | sudo bash
