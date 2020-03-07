@@ -42,6 +42,9 @@ sudo ./aws/install
 cd ..
 rm -rf awscliv2.zip aws/
 
+# K3s  
+curl -sfL https://get.k3s.io | sh -
+
 # Zsh
 sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
