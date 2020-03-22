@@ -22,6 +22,11 @@ sudo snap install minikube --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
 
+# KinD
+curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
+chmod +x ./kind
+sudo mv ./kind /usr/bin/kind
+
 # Utilities
 sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget -y
 
