@@ -84,8 +84,8 @@ function ks {
         export KUBECONFIG=~/.kube/config
         ;;
      as)
-	 export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
-	 ;;
+	export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
+	;;
      ap)
         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-kubeconfig.yaml
         ;;
@@ -143,12 +143,12 @@ export PATH="$PWD/node_modules/.bin/:$PATH"
 
 # Command highlight && Completion.
 autoload -Uz compinit # && compinit
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # # fnm
-export PATH=/home/cguertz/.fnm:$PATH
+export PATH=/home/$USER/.fnm:$PATH
 eval "`fnm env --multi`"
 
 # The next line updates PATH for the Google Cloud SDK.

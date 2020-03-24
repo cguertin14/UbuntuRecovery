@@ -29,7 +29,7 @@ chmod +x ./kind
 sudo mv ./kind /usr/bin/kind
 
 # Utilities
-sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget tilda -y
+sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget tilda neofetch -y
 
 # Terraform
 wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
