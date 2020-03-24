@@ -5,10 +5,11 @@ sudo apt update
 sudo apt upgrade -y
 
 # Git
-sudo apt install git curl -y
+sudo apt install git curl tig -y
 
 # Docker
-sudo snap install docker -y
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -28,7 +29,7 @@ chmod +x ./kind
 sudo mv ./kind /usr/bin/kind
 
 # Utilities
-sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget -y
+sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget tilda -y
 
 # Terraform
 wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
@@ -52,6 +53,9 @@ curl -sfL https://get.k3s.io | sh -
 
 # Zsh
 sudo apt install zsh -y
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 
