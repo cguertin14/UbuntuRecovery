@@ -71,7 +71,8 @@ ZSH_THEME="gentoo"
 plugins=(
     git 
     helm 
-    docker 
+    docker
+    docker-compose
     kubectl
     zsh-completions 
     zsh-autosuggestions
@@ -125,7 +126,8 @@ function goto {
 }
 
 export GOPATH=$HOME/go
-export GO111MODULE="on"
+export PATH=$PATH:/usr/local/go/bin
+export GO111MODULE=on
 alias cat=bat
 export KUBECONFIG=~/.kube/config
 eval "$(starship init zsh)"
@@ -142,8 +144,8 @@ unset ZLE_RPROMPT_INDENT
 export PATH="$PWD/node_modules/.bin/:$PATH"
 
 # Command highlight && Completion.
-autoload -Uz compinit # && compinit
-source /home/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -Uz compinit #&& compinit -i
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
@@ -156,3 +158,7 @@ if [ -f '/home/cguertz/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# fnm
+export PATH=/home/cguertz/.fnm:$PATH
+eval "`fnm env --multi`"
