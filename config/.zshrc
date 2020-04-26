@@ -85,8 +85,8 @@ function ks {
         export KUBECONFIG=~/.kube/config
         ;;
      as)
-	export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
-	;;
+	 export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
+	 ;;
      ap)
         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-kubeconfig.yaml
         ;;
@@ -128,7 +128,7 @@ function goto {
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export GO111MODULE=on
-alias cat=bat
+alias cat=batcat
 export KUBECONFIG=~/.kube/config
 eval "$(starship init zsh)"
 emulate sh -c 'source /etc/profile'
@@ -150,7 +150,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # # fnm
-export PATH=/home/$USER/.fnm:$PATH
+export PATH=/home/cguertz/.fnm:$PATH
 eval "`fnm env --multi`"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -159,6 +159,12 @@ if [ -f '/home/cguertz/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-# fnm
-export PATH=/home/cguertz/.fnm:$PATH
-eval "`fnm env --multi`"
+# Java
+export PATH=/usr/lib/jvm/jdk1.8.0_241/bin:$PATH
+export PATH=/usr/lib/jvm/jdk1.8.0_241/db/bin:$PATH
+export PATH=/usr/lib/jvm/jdk1.8.0_241/jre/bin:$PATH
+
+#export J2SDKDIR="/usr/lib/jvm/jdk1.8.0_251"
+#export J2REDIR="/usr/lib/jvm/jdk1.8.0_251/jre"
+#export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_251"
+#export DERBY_HOME="/usr/lib/jvm/jdk1.8.0_251/db"

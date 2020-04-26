@@ -11,5 +11,6 @@
     "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
     "go.gopath": "/home/cguertz/go",
-    "go.lintOnSave": "off"
+    "go.lintOnSave": "off",
+    "editor.mouseWheelZoom": true
 }
