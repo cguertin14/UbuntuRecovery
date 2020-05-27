@@ -15,6 +15,7 @@ sudo snap install helm --classic
 sudo snap install minikube --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
+sudo snap install circleci --classic
 
 # KinD
 curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
