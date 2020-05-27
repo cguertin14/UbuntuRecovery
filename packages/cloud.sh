@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# Apply updates
-sudo apt update
-sudo apt upgrade -y
-
-# Git
-sudo apt install git curl tig -y
-
 # Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
@@ -28,8 +21,8 @@ curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.
 chmod +x ./kind
 sudo mv ./kind /usr/bin/kind
 
-# Utilities
-sudo apt install net-tools ansible powertop tlp vagrant bat vim unzip wget tilda neofetch -y
+# K3s  
+curl -sfL https://get.k3s.io | sh -
 
 # Terraform
 wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
@@ -48,30 +41,6 @@ sudo ./aws/install
 cd ..
 rm -rf awscliv2.zip aws/
 
-# K3s  
-curl -sfL https://get.k3s.io | sh -
-
-# fnm (Node JS)
-curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
-fnm install 11.12.0
-fnm use
-fnm install
-fnm use
-fnm use 11.12.0
-fnm default 11.12.0
-
 # JSON and YAML cli tools (jq & yq)
 sudo curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -o /usr/bin/jq
 sudo curl -L "https://github.com/mikefarah/yq/releases/download/3.2.1/yq_linux_amd64" -o /usr/bin/yq
-
-# Starship (terminal)
-curl -fsSL https://starship.rs/install.sh | sudo bash
-
-# Zsh
-sudo apt install zsh -y
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-cp .zshrc ~/
-chsh -s $(which zsh)
