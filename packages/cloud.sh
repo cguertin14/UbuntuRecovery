@@ -45,3 +45,6 @@ rm -rf awscliv2.zip aws/
 # JSON and YAML cli tools (jq & yq)
 sudo curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -o /usr/bin/jq
 sudo curl -L "https://github.com/mikefarah/yq/releases/download/3.2.1/yq_linux_amd64" -o /usr/bin/yq
+
+# Circle CI CLI
+sudo curl -fLSs https://circle.ci/cli | sudo bash
