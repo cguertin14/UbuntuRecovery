@@ -1,3 +1,3 @@
 .PHONY:
 install:
-					./setup.sh
+		./setup.sh
