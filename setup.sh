@@ -6,8 +6,8 @@ sudo apt update && sudo apt upgrade -y
 # Install packages.
 ./packages/index.sh
 
-# Install themes.
-./themes/index.sh
+# Install gnome configuration.
+./gnome/index.sh
 
 # Install configuration files.
 ./config/index.sh

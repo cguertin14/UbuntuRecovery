@@ -82,17 +82,17 @@ source $ZSH/oh-my-zsh.sh
 function ks {
    case "$1" in
      k)
-        export KUBECONFIG=~/.kube/config
-        ;;
+         export KUBECONFIG=~/.kube/config
+         ;;
      as)
-	 export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
-	 ;;
+         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
+         ;;
      ap)
-        export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-kubeconfig.yaml
-        ;;
+         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-kubeconfig.yaml
+         ;;
      *)
-        echo "Utilisation: $0 {k|as|ap}"
-        ;;
+         echo "Utilisation: $0 {k|as|ap}"
+         ;;
    esac
 }
 
@@ -105,23 +105,26 @@ function goto {
          cd ~/Documents/Work/Infra
          ;;
      ets)
-	 cd ~/Documents/ETS
-	 ;;
+	      cd ~/Documents/ETS
+	      ;;
      sesh)
-	 cd ~/Documents/ETS/Session4
-	 ;;
+         cd ~/Documents/ETS/Session4
+         ;;
      perso)
-	 cd ~/Documents/Perso
-	 ;;
+         cd ~/Documents/Perso
+         ;;
      cedille)
-	 cd ~/Documents/ETS/Cedille
-	 ;;
+         cd ~/Documents/ETS/Cedille
+         ;;
      infrac)
-	 cd ~/Documents/ETS/Cedille/cloud-sre
-	 ;;
+         cd ~/Documents/ETS/Cedille/cloud-sre
+         ;;
+     df)
+         cd ~/Documents/Dotfiles
+         ;;
      *)
-    echo "Utilisation: $0 {work|infra|infrac|ets|cedille|perso}"
-    ;;
+         echo "Utilisation: $0 {work|infra|infrac|ets|cedille|perso|df}"
+         ;;
    esac
 }
 
@@ -136,11 +139,6 @@ emulate sh -c 'source /etc/profile'
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
 
 unset ZLE_RPROMPT_INDENT
-#export ANDROID_HOME=$HOME/Android/Sdk
-#export PATH=$PATH:$ANDROID_HOME/emulator
-#export PATH=$PATH:$ANDROID_HOME/tools
-#export PATH=$PATH:$ANDROID_HOME/tools/bin
-#export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PWD/node_modules/.bin/:$PATH"
 
 # Command highlight && Completion.

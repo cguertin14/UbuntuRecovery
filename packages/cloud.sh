@@ -15,7 +15,6 @@ sudo snap install helm --classic
 sudo snap install minikube --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
-sudo snap install circleci --classic
 
 # KinD
 curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
@@ -31,9 +30,10 @@ sudo unzip ./terraform_0.12.21_linux_amd64.zip -d /usr/local/bin/
 rm terraform_0.12.21_linux_amd64.zip
 
 # GCloud
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get install apt-transport-https ca-certificates gnupg
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get update && sudo apt-get install google-cloud-sdk -y
 
 # AWS
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
