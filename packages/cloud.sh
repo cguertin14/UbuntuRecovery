@@ -25,9 +25,9 @@ sudo mv ./kind /usr/bin/kind
 curl -sfL https://get.k3s.io | sh -
 
 # Terraform
-wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
-sudo unzip ./terraform_0.12.21_linux_amd64.zip -d /usr/local/bin/
-rm terraform_0.12.21_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip
+sudo unzip ./terraform_0.12.26_linux_amd64.zip -d /usr/local/bin/
+rm terraform_0.12.26_linux_amd64.zip
 
 # GCloud
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
