@@ -105,10 +105,10 @@ function goto {
          cd ~/Documents/Work/Infra
          ;;
      ets)
-	      cd ~/Documents/ETS
-	      ;;
+         cd ~/Documents/ETS
+	     ;;
      sesh)
-         cd ~/Documents/ETS/Session4
+         cd ~/Documents/ETS/Session5
          ;;
      perso)
          cd ~/Documents/Perso
