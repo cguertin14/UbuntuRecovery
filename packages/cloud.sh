@@ -21,6 +21,11 @@ curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.
 chmod +x ./kind
 sudo mv ./kind /usr/bin/kind
 
+# Kubectx & Kubens
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
 # K3s  
 curl -sfL https://get.k3s.io | sh -
 
