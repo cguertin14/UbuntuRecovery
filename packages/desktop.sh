@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Desktop applications.
+sudo apt install thunderbird -y
 sudo snap install libreoffice 
 sudo snap install code --classic
 sudo snap install spotify
