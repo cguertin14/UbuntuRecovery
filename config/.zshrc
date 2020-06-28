@@ -133,6 +133,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GO111MODULE=on
 alias cat=batcat
 export KUBECONFIG=~/.kube/config
+export EDITOR=vi
 eval "$(starship init zsh)"
 emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
