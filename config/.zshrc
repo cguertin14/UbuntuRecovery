@@ -152,11 +152,8 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=/home/cguertz/.fnm:$PATH
 eval "`fnm env --multi`"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/cguertz/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cguertz/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cguertz/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Cargo
+export PATH=/home/cguertz/.cargo/bin:$PATH
 
 # Java
 export PATH=/usr/lib/jvm/jdk1.8.0_241/bin:$PATH
