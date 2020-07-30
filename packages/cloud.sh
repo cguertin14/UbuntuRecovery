@@ -1,4 +1,5 @@
 #!/bin/sh
+GO111MODULE="on"
 
 # Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -21,6 +22,12 @@ sudo snap install heroku --classic
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 sudo mkdir -p $DEMO/bin
 sudo mv kustomize $DEMO/bin
+sudo snap install kustomize
+go get github.com/bitnami/kubecfg
+
+# Jsonnet
+sudo apt-get install jsonnet -y
+go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # KinD
 curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"

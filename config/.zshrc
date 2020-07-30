@@ -130,6 +130,7 @@ function goto {
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
 export GO111MODULE=on
 alias cat=batcat
 export KUBECONFIG=~/.kube/config
