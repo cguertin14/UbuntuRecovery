@@ -17,6 +17,11 @@ sudo snap install helm --classic
 sudo snap install minikube --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
+
+# Kustomize
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+sudo mkdir -p $DEMO/bin
+sudo mv kustomize $DEMO/bin
 sudo snap install kustomize
 go get github.com/bitnami/kubecfg
 
