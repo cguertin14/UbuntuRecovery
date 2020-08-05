@@ -27,6 +27,7 @@ go get github.com/bitnami/kubecfg
 
 # Jsonnet
 sudo apt-get install jsonnet -y
+go get github.com/grafana/tanka/cmd/tk
 go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # KinD
