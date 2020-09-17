@@ -31,7 +31,7 @@ go get github.com/grafana/tanka/cmd/tk
 go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # KinD
-curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-$(uname)-amd64"
+curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.9.0/kind-$(uname)-amd64"
 chmod +x ./kind
 sudo mv ./kind /usr/bin/kind
 
