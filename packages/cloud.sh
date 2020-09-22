@@ -44,9 +44,9 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 curl -sfL https://get.k3s.io | sh -
 
 # Terraform
-wget https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
-sudo unzip ./terraform_0.13.1_linux_amd64.zip -d /usr/local/bin/
-rm terraform_0.13.1_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.13.3/terraform_0.13.3_linux_amd64.zip
+sudo unzip ./terraform_0.13.3_linux_amd64.zip -d /usr/local/bin/
+rm terraform_0.13.3_linux_amd64.zip
 
 # GCloud
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
