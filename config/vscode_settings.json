@@ -1,16 +1,25 @@
 {
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "editor.tabSize": 2,
-    "window.zoomLevel": 0,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "go.useLanguageServer": true,
-    "go.autocompleteUnimportedPackages": true,
-    "go.gopath": "/home/cguertz/go",
-    "go.lintOnSave": "off",
-    "editor.mouseWheelZoom": true
+  // Terraform settings
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+
+  // Go settings
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.autocompleteUnimportedPackages": true,
+  "go.useLanguageServer": true,
+  "go.formatTool": "goimports",
+
+  // Editor settings
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.mouseWheelZoom": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false
 }
