@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/cguertz/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,66 +79,27 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-function ks {
-   case "$1" in
-     k)
-         export KUBECONFIG=~/.kube/config
-         ;;
-     as)
-         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-staging-kubeconfig.yaml
-         ;;
-     ap)
-         export KUBECONFIG=~/Documents/Work/Infra/config/cluster/k8s-artifex-cluster-kubeconfig.yaml
-         ;;
-     *)
-         echo "Utilisation: $0 {k|as|ap}"
-         ;;
-   esac
-}
-
-function goto {
-   case "$1" in
-     work)
-         cd ~/Documents/Work
-         ;;
-     infra)
-         cd ~/Documents/Work/Infra
-         ;;
-     ets)
-         cd ~/Documents/ETS
-	     ;;
-     sesh)
-         cd ~/Documents/ETS/Session5
-         ;;
-     perso)
-         cd ~/Documents/Perso
-         ;;
-     cedille)
-         cd ~/Documents/ETS/Cedille
-         ;;
-     infrac)
-         cd ~/Documents/ETS/Cedille/cloud-sre
-         ;;
-     df)
-         cd ~/Documents/Dotfiles
-         ;;
-     *)
-         echo "Utilisation: $0 {work|infra|infrac|ets|cedille|perso|df}"
-         ;;
-   esac
-}
-
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
+export PATH=$PATH:$HOME/bin
 export GO111MODULE=on
-alias cat=batcat
 export KUBECONFIG=~/.kube/config
 export EDITOR=vi
 eval "$(starship init zsh)"
 emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
+
+function cat {
+    if [ $# -eq "0" ] 
+      then
+        echo "No arguments provided to cat."
+        batcat --help
+    else
+        batcat --style=plain --pager=0 $1
+    fi
+}
 
 unset ZLE_RPROMPT_INDENT
 export PATH="$PWD/node_modules/.bin/:$PATH"
@@ -147,21 +108,6 @@ export PATH="$PWD/node_modules/.bin/:$PATH"
 autoload -Uz compinit #&& compinit -i
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-# # fnm
-export PATH=/home/cguertz/.fnm:$PATH
+# fnm
+export PATH=/home/$USER/.fnm:$PATH
 eval "`fnm env --multi`"
-
-# Cargo
-export PATH=/home/cguertz/.cargo/bin:$PATH
-
-# Java
-export PATH=/usr/lib/jvm/jdk1.8.0_241/bin:$PATH
-export PATH=/usr/lib/jvm/jdk1.8.0_241/db/bin:$PATH
-export PATH=/usr/lib/jvm/jdk1.8.0_241/jre/bin:$PATH
-
-#export J2SDKDIR="/usr/lib/jvm/jdk1.8.0_251"
-#export J2REDIR="/usr/lib/jvm/jdk1.8.0_251/jre"
-#export JAVA_HOME="/usr/lib/jvm/jdk1.8.0_251"
-#export DERBY_HOME="/usr/lib/jvm/jdk1.8.0_251/db"
