@@ -13,10 +13,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo snap install doctl
 sudo snap install go --classic
 sudo snap install kubectl --classic
-sudo snap install helm --classic
 sudo snap install minikube --classic
 curl -sL https://run.linkerd.io/install | sh
 sudo snap install heroku --classic
+
+# Helm
+sudo snap install helm --classic
+helm repo add stable https://charts.helm.sh/stable
 
 # Kustomize
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
