@@ -2,31 +2,19 @@
 GO111MODULE="on"
 
 # Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-sudo groupadd docker
-sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Kubernetes & Related projects
-sudo snap install doctl
-sudo snap install go --classic
-sudo snap install kubectl --classic
-sudo snap install minikube --classic
-curl -sL https://run.linkerd.io/install | sh
-sudo snap install heroku --classic
+sudo apt install golang-go -y
 
 # Helm
-sudo snap install helm --classic
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 helm repo add stable https://charts.helm.sh/stable
 
 # Kustomize
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-sudo mkdir -p $DEMO/bin
-sudo mv kustomize $DEMO/bin
-sudo snap install kustomize
-go get github.com/bitnami/kubecfg
+sudo mv kustomize /usr/bin/kustomize
 
 # Jsonnet
 sudo apt-get install jsonnet -y
