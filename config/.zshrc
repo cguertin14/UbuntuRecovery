@@ -46,7 +46,3 @@ export PATH="$PWD/node_modules/.bin/:$PATH"
 # Command highlight && Completion.
 autoload -Uz compinit #&& compinit -i
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# fnm
-export PATH=/home/$USER/.fnm:$PATH
-eval "`fnm env --multi`"

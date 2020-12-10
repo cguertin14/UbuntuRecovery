@@ -14,6 +14,3 @@ $DIR/terminal.sh
 
 # Desktop packages.
 $DIR/desktop.sh
-
-# Other packages.
-$DIR/other.sh
