@@ -11,3 +11,7 @@ sudo snap install slack --classic
 sudo snap install postman
 sudo snap install intellij-idea-ultimate --classic
 sudo snap install deja-dup --classic
+
+# Fuzzy Search
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
