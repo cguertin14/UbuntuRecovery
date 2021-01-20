@@ -20,6 +20,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin/
 export GO111MODULE=on
 export KUBECONFIG=~/.kube/config
 export EDITOR=vi
