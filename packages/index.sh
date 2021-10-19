@@ -14,3 +14,6 @@ $DIR/terminal.sh
 
 # Desktop packages.
 $DIR/desktop.sh
+
+# i3 packages.
+$DIR/i3.sh
