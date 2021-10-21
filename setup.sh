@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Install scripts.
+./scripts/index.sh
+
 # Apply updates.
 sudo apt update && sudo apt upgrade -y
 
