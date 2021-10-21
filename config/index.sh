@@ -9,6 +9,7 @@ mkdir -p ~/.config/i3blocks
 
 # Install config files.
 cp $DIR/i3.config ~/.config/i3/config
+cp $DIR/dunst.config ~/.config/i3/dunst_config
 cp $DIR/i3blocks.config ~/.config/i3blocks/config
 cp $DIR/.zshrc ~/.zshrc
 cp $DIR/vscode_settings.json ~/.config/Code/User/settings.json
