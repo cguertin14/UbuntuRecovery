@@ -18,5 +18,8 @@ sudo apt update && sudo apt upgrade -y
 # Install Cloud packages.
 ./cloud/index.sh
 
+# Setup SystemD Services.
+./systemd/index.sh
+
 # Cleanup.
 rm -rf get-docker.sh awscliv2.zip aws/
