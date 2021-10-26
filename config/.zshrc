@@ -31,6 +31,23 @@ emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
 
+function goto {
+    case $1 in
+        ets)
+            cd ~/Documents/ETS;
+            ;;
+        cedille)
+            cd ~/Documents/Cedille;
+            ;;
+        df)
+            cd ~/Documents/dotfiles;
+            ;;
+        *)
+            echo "Usage: df|cedille|ets"
+            ;;
+    esac
+}
+
 function cat {
     if [ $# -eq "0" ] 
       then
@@ -47,3 +64,5 @@ export PATH="$PWD/node_modules/.bin/:$PATH"
 # Command highlight && Completion.
 autoload -Uz compinit #&& compinit -i
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

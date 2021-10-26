@@ -14,7 +14,7 @@ cp $DIR/i3blocks.config ~/.config/i3blocks/config
 cp $DIR/.zshrc ~/.zshrc
 cp $DIR/vscode_settings.json ~/.config/Code/User/settings.json
 cp $DIR/tilda_config ~/.config/tilda/config_0
-cp $DIR/startship.toml ~/.config/startship.toml
+cp $DIR/starship.toml ~/.config/startship.toml
 sudo cp $DIR/logind.conf /etc/systemd/logind.conf
 
 # Graphics configuration file
