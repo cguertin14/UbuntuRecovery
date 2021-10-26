@@ -42,8 +42,11 @@ function goto {
         df)
             cd ~/Documents/dotfiles;
             ;;
+	perso)
+	    cd ~/Documents/perso;
+	    ;;
         *)
-            echo "Usage: df|cedille|ets"
+            echo "Usage: df|cedille|ets|perso"
             ;;
     esac
 }
