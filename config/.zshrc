@@ -31,6 +31,8 @@ emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
 
+alias icat="kitty +kitten icat"
+
 function goto {
     case $1 in
         ets)
@@ -43,7 +45,7 @@ function goto {
             cd ~/Documents/dotfiles;
             ;;
 	perso)
-	    cd ~/Documents/perso;
+	    cd ~/Documents/Perso;
 	    ;;
         *)
             echo "Usage: df|cedille|ets|perso"
