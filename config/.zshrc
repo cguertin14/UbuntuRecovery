@@ -25,8 +25,6 @@ export GO111MODULE=on
 export KUBECONFIG=~/.kube/config
 export EDITOR=vi
 
-eval "$(starship init zsh)"
-
 emulate sh -c 'source /etc/profile'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
@@ -71,3 +69,5 @@ autoload -Uz compinit #&& compinit -i
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"
