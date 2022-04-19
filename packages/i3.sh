@@ -13,3 +13,32 @@ git clone git@github.com:vivien/i3blocks-contrib.git ~/Documents/Perso/i3blocks-
 sudo add-apt-repository ppa:regolith-linux/release
 sudo apt update
 sudo apt install i3-gaps
+
+# Install polybar dependencies
+pip3 install pywal 
+sudo apt install -y \
+  python3-sphinx \
+  libuv1-dev \
+  libasound2-dev \
+  libcurl4-openssl-dev \
+  libmpdclient-dev \
+  libiw-dev \
+  libpulse-dev \
+  libxcb-composite0-dev \
+  xcb-proto \
+  libxcb-ewmh-dev \
+  python3-xcbgen \
+  libjsoncpp-dev
+
+# Install polybar by compiling it
+POLYBAR_VERSION="3.6.2"
+wget https://github.com/polybar/polybar/releases/download/${POLYBAR_VERSION}/polybar-${POLYBAR_VERSION}.tar.gz
+tar -xvf polybar-${POLYBAR_VERSION}.tar.gz
+cd polybar-${POLYBAR_VERSION}/
+
+# Compile polybar and cp binaries elsewhere
+./build.sh -f -g -j --all-features
+sudo cp build/bin/polybar* /usr/local/bin/
+
+# Cleanup
+cd .. && rm -rf polybar-${POLYBAR_VERSION}*
