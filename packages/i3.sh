@@ -3,7 +3,7 @@
 # Install i3 dependencies
 sudo apt install feh fonts-font-awesome rofi pulseaudio-utils xbacklight alsa-tools \
                  clipit gcc git terminator locate pcmanfm acpi libnotify-bin light nitrogen \
-                 volumeicon-alsa playerctl blueman i3 redshift xfce4-power-manager compton xsecurelock kitty arandr \
+                 volumeicon-alsa lxappearance playerctl blueman i3 redshift xfce4-power-manager compton xsecurelock kitty arandr \
                  -y
 
 # i3-gaps installation
