@@ -37,7 +37,7 @@ tar -xvf polybar-${POLYBAR_VERSION}.tar.gz
 cd polybar-${POLYBAR_VERSION}/
 
 # Compile polybar and cp binaries elsewhere
-./build.sh -f
+./build.sh -f -g -j --all-features
 sudo cp build/bin/polybar* /usr/local/bin/
 
 # Cleanup
