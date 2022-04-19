@@ -7,5 +7,5 @@
 
 To install all dependencies, simply run this command:
 ```bash
-make install
+$ make
 ```
