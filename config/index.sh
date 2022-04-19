@@ -6,12 +6,12 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 # Create directories
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3blocks
+mkdir -p ~/.config/polybar
 
 # Install config files.
+cp $DIR/polybar.ini ~/.config/polybar/config.ini
 cp $DIR/i3.config ~/.config/i3/config
 cp $DIR/dunst.config ~/.config/i3/dunst_config
-cp $DIR/i3blocks.config ~/.config/i3blocks/config
 cp $DIR/.zshrc ~/.zshrc
 cp $DIR/vscode_settings.json ~/.config/Code/User/settings.json
 cp $DIR/kitty.conf ~/.config/kitty/kitty.conf
