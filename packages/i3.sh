@@ -40,3 +40,10 @@ sudo cp build/bin/polybar* /usr/local/bin/
 
 # Cleanup
 cd .. && rm -rf polybar-${POLYBAR_VERSION}*
+
+# Install rofi themes
+git clone --depth=1 git@github.com:adi1090x/rofi.git
+cd rofi && ./setup.sh
+
+# Cleanup
+cd .. && rm -rf rofi*
