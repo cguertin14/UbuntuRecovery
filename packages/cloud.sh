@@ -1,5 +1,4 @@
 #!/bin/sh
-GO111MODULE="on"
 
 # Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -9,12 +8,12 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Kubernetes & Related projects
+# Kubernetes & Cloud-Related projects
 sudo snap install doctl
 sudo snap install go --classic
 sudo snap install kubectl --classic
 sudo snap install minikube --classic
-curl -sL https://run.linkerd.io/install | sh
+sudo snap install terraform --classic
 sudo snap install heroku --classic
 
 # Helm
@@ -26,12 +25,12 @@ curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack
 sudo mkdir -p $DEMO/bin
 sudo mv kustomize $DEMO/bin
 sudo snap install kustomize
-go get github.com/bitnami/kubecfg
+go install github.com/bitnami/kubecfg@latest
 
 # Jsonnet
 sudo apt-get install jsonnet -y
-go get github.com/grafana/tanka/cmd/tk
-go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+go install github.com/grafana/tanka/cmd/tk@latest
+go install github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest
 
 # KinD
 curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.9.0/kind-$(uname)-amd64"
@@ -45,11 +44,6 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 # K3s  
 curl -sfL https://get.k3s.io | sh -
-
-# Terraform
-wget https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip
-sudo unzip ./terraform_0.13.4_linux_amd64.zip -d /usr/local/bin/
-rm terraform_0.13.4_linux_amd64.zip
 
 # GCloud
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list

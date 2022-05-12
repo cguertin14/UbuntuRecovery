@@ -6,10 +6,24 @@ sudo apt install feh fonts-font-awesome rofi pulseaudio-utils xbacklight alsa-to
                  volumeicon-alsa lxappearance playerctl blueman i3 redshift xfce4-power-manager compton xsecurelock kitty arandr \
                  -y
 
-# i3-gaps installation
-sudo add-apt-repository ppa:regolith-linux/release
-sudo apt update
-sudo apt install i3-gaps
+# Install i3-gaps dependencies
+sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+  libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+  libstartup-notification0-dev libxcb-randr0-dev \
+  libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+  libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+  autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev \
+  meson g++ cmake
+
+# Install i3-gaps
+git clone https://www.github.com/Airblader/i3 i3-gaps && cd i3-gaps
+mkdir -p build && cd build
+meson ..
+ninja
+sudo cp i3 /usr/bin/i3
+
+# Cleanup
+cd ../.. && rm -rf i3-gaps
 
 # Install polybar dependencies
 mkdir -p $HOME/.config/polybar
@@ -23,10 +37,15 @@ sudo apt install -y \
   libiw-dev \
   libpulse-dev \
   libxcb-composite0-dev \
+  libxcb-util0-dev \
+  libxcb-image0-dev \
+  libxcb-icccm4-dev \
   xcb-proto \
   libxcb-ewmh-dev \
   python3-xcbgen \
-  libjsoncpp-dev
+  libjsoncpp-dev \
+  libcairo2-dev \
+  libxcb-randr0-dev
 
 # Install polybar by compiling it
 POLYBAR_VERSION="3.6.2"
