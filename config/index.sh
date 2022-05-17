@@ -15,7 +15,7 @@ cp $DIR/dunst.config ~/.config/i3/dunst_config
 cp $DIR/.zshrc ~/.zshrc
 cp $DIR/vscode_settings.json ~/.config/Code/User/settings.json
 cp $DIR/kitty.conf ~/.config/kitty/kitty.conf
-cp $DIR/starship.toml ~/.config/startship.toml
+cp $DIR/starship.toml ~/.config/starship.toml
 sudo cp $DIR/logind.conf /etc/systemd/logind.conf
 
 # Graphics configuration file
