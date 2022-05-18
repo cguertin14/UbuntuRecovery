@@ -8,9 +8,13 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+# Install Go
+GO_VERSION="1.18.2"
+wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+rm -rf go/ go${GO_VERSION}.linux-amd64.tar.gz
+
 # Kubernetes & Cloud-Related projects
-sudo snap install doctl
-sudo snap install go --classic
 sudo snap install kubectl --classic
 sudo snap install minikube --classic
 sudo snap install terraform --classic
@@ -33,9 +37,7 @@ go install github.com/grafana/tanka/cmd/tk@latest
 go install github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest
 
 # KinD
-curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/v0.9.0/kind-$(uname)-amd64"
-chmod +x ./kind
-sudo mv ./kind /usr/bin/kind
+go install sigs.k8s.io/kind@v0.13.0
 
 # Kubectx & Kubens
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
