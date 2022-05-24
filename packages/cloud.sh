@@ -8,11 +8,11 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Install Go
-GO_VERSION="1.18.2"
-wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
-rm -rf go/ go${GO_VERSION}.linux-amd64.tar.gz
+# Install latest version of Go
+LATEST_GO_VERSION="$(curl https://go.dev/VERSION\?m\=text)"
+wget https://go.dev/dl/${LATEST_GO_VERSION}.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf ${LATEST_GO_VERSION}.linux-amd64.tar.gz
+rm -rf go*
 
 # Kubernetes & Cloud-Related projects
 sudo snap install kubectl --classic
