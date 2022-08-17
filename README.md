@@ -7,7 +7,7 @@
 
 To obtain execution rights to run `.sh` files, run:
 ```bash
-chmod +x */*.sh
+$ chmod +x */*.sh
 ```
 
 To install all dependencies, simply run this command:
