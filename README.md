@@ -5,6 +5,11 @@
 
 ## Install dependencies
 
+To obtain execution rights to run `.sh` files, run:
+```bash
+$ chmod +x */*.sh
+```
+
 To install all dependencies, simply run this command:
 ```bash
 $ make
